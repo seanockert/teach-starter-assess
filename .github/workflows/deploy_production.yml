@@ -1,0 +1,31 @@
+name: Deploy production
+
+on: workflow_dispatch
+
+jobs:
+  production:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    env:
+      VUE_APP_ENV: production
+      VUE_APP_DEPLOY: subfolder
+      VUE_APP_PATH: /var/www/html/my-teachstarter/dist/assess
+    steps:
+      - uses: actions/checkout@v2
+      - name: Push master branch to production server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP_VULTR_PROD }}
+          username: ${{ secrets.SSH_VULTR_USERNAME }}
+          key: ${{ secrets.SSH_VULTR_ACCESS_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /var/www/html/my-teachstarter
+            git fetch
+            git checkout master
+            git pull github master
+            echo 'VUE_APP_ENV=${{ env.VUE_APP_ENV }}' > .env
+            echo 'VUE_APP_DEPLOY=${{ env.VUE_APP_DEPLOY }}' >> .env
+            echo 'VUE_APP_PATH=${{ env.VUE_APP_PATH }}' >> .env
+            yarnpkg
+            yarnpkg build

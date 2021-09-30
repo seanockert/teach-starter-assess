@@ -1,0 +1,63 @@
+name: Deploy project
+
+on: [push]
+
+jobs:
+  development:
+    if: contains(github.ref, 'refs/heads/dev/')
+    runs-on: ubuntu-latest
+    env:
+      VUE_APP_ENV: development
+      VUE_APP_DEPLOY: subfolder
+      VUE_APP_PATH: /var/www/html/assess-dev-teachstarter/dist/assess
+    steps:
+      - uses: actions/checkout@v2
+      - uses: nelonoel/branch-name@v1.0.1
+      - run: echo ${BRANCH_NAME}
+      - name: Push dev/*** branch to staging server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP_VULTR_STAGING }}
+          username: ${{ secrets.SSH_VULTR_USERNAME }}
+          key: ${{ secrets.SSH_VULTR_ACCESS_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /var/www/html/assess-dev-teachstarter
+            git fetch
+            git checkout ${{ env.BRANCH_NAME }}
+            git pull github ${{ env.BRANCH_NAME }}
+            echo 'VUE_APP_ENV=${{ env.VUE_APP_ENV }}' > .env
+            echo 'VUE_APP_DEPLOY=${{ env.VUE_APP_DEPLOY }}' >> .env
+            echo 'VUE_APP_PATH=${{ env.VUE_APP_PATH }}' >> .env
+            yarn
+            yarn build
+
+  staging:
+    if: github.ref == 'refs/heads/staging' || github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    env:
+      VUE_APP_ENV: development
+      VUE_APP_DEPLOY: subfolder
+      VUE_APP_PATH: /var/www/html/assess-teachstarter/dist/assess
+    steps:
+      - uses: actions/checkout@v2
+      - uses: nelonoel/branch-name@v1.0.1
+      - run: echo ${BRANCH_NAME}
+      - name: Push staging/master branch to staging server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP_VULTR_STAGING }}
+          username: ${{ secrets.SSH_VULTR_USERNAME }}
+          key: ${{ secrets.SSH_VULTR_ACCESS_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /var/www/html/assess-teachstarter 
+            echo Deploying branch ${{ env.BRANCH_NAME }}
+            git fetch
+            git checkout ${{ env.BRANCH_NAME }}
+            git pull github ${{ env.BRANCH_NAME }}
+            echo 'VUE_APP_ENV=${{ env.VUE_APP_ENV }}' > .env
+            echo 'VUE_APP_DEPLOY=${{ env.VUE_APP_DEPLOY }}' >> .env
+            echo 'VUE_APP_PATH=${{ env.VUE_APP_PATH }}' >> .env
+            yarn
+            yarn build

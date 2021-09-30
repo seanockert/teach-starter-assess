@@ -1,0 +1,134 @@
+/* Tab ---------------------- */
+/* Inspired by: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role#Example */
+.tablist {
+  box-shadow: inset 0 -2px 0 0 $grey-100;
+  //overflow-x: auto;
+  position: relative;
+  padding-top: 2px;
+
+  :first-child {
+    border-radius: $border-radius 0 0 0;
+  }
+
+  :last-child {
+    border-radius: 0 $border-radius 0 0;
+  }
+
+  .tab {
+    flex: 1 1 auto;
+    padding: $base-padding;
+    transition: box-shadow 0.15s ease-out;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      box-shadow: inset 0 -2px 0 0 $grey-200;
+    }
+
+    &:focus {
+      box-shadow: inset 0 -2px 0 0 $grey-500;
+    }
+
+    &[aria-selected='true'],
+    &.active {
+      box-shadow: inset 0 -2px 0 0 $ts-green-500;
+      color: inherit;
+      font-weight: bold;
+      padding: $base-padding 0.6rem;
+      z-index: 3;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  .tab-icon {
+    padding: $base-padding/2 $base-padding * 2;
+
+    svg {
+      margin: 0;
+    }
+  }
+
+  .pull-right {
+    margin-left: auto;
+    float: right;
+  }
+}
+
+.tabpanel {
+  padding: $base-padding;
+  z-index: 2;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@media #{$medium-up} {
+  .tablist {
+    .tab {
+      padding: $base-padding * 2;
+
+      &[aria-selected='true'],
+      &.active {
+        padding: $base-padding * 2 1.2rem;
+      }
+    }
+  }
+}
+
+.tablist-sub {
+  box-shadow: none;
+  margin: 0 $base-padding;
+
+  :first-child,
+  :last-child {
+    border-radius: $border-radius;
+  }
+
+  .button-basic {
+    outline: none;
+    position: relative;
+
+    // A complicated way to bold the text using a pseudo element without forcing the layout to change
+    &:after {
+      color: rgba(0, 0, 0, 0);
+      content: attr(data-text);
+      left: 0;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+
+    &[aria-selected='true'] {
+      background-color: $ts-green-100;
+      color: rgba(0, 0, 0, 0); // Make text invisible
+
+      &:after {
+        color: $ts-green-800; // Show background text
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media #{$small-only} {
+  .tablist {
+    > * {
+      padding: $base-padding;
+
+      &[aria-selected='true'] {
+        padding: $base-padding 0.6rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+# Stages
+stages:
+  - development
+  - staging
+  - deploy
+
+# Testing development area
+deploy_development:
+    stage: development
+    image: node:6
+    script:
+        - echo "Deploying development branch to staging server"
+        - cd /var/www/html/assess-dev-teachstarter
+        - git fetch
+        - git checkout $CI_COMMIT_REF_NAME
+        - git pull origin $CI_COMMIT_REF_NAME
+        - npm install --no-progress
+        - npm run-script build
+    environment:
+        name: development
+        url: https://staging-assess-dev.teachstarter.com
+    only:
+        - /^dev/
+    tags:
+        - staging
+
+# Deploy to staging server if pushing master server to gitlab
+deploy_staging:
+  stage: staging
+  image: node:6
+  script:
+    - echo "Deploy to staging server"
+    - cd /var/www/html/assess-teachstarter
+    - git checkout master
+    - git pull origin master
+    - npm install --no-progress
+    - npm run-script build
+  environment:
+    name: staging
+    url: https://assess-staging.teachstarter.com
+  only:
+    - master
+  tags:
+    - staging
+
+# Deply to production server by manually pushing the deploy to production button
+deploy_production:
+  stage: deploy
+  image: node:6
+  script:
+    - echo "Deploy to production server"
+    - cd /var/www/html/my-teachstarter
+    - git checkout master
+    - git pull origin master
+    - npm install --no-progress
+    - npm run-script build
+    - ssh vus "cd /var/www/html/my-teachstarter && git checkout master && git pull origin master && npm install --no-progress && npm run-script build"
+    - ssh vgb "cd /var/www/html/my-teachstarter && git checkout master && git pull origin master && npm install --no-progress && npm run-script build"
+  environment:
+    name: production
+    url: https://assess.teachstarter.com
+  when:
+    manual
+  only:
+    - master
+  tags:
+    - production

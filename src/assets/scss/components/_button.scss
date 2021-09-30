@@ -1,0 +1,291 @@
+/* Button ---------------------- */
+
+// Naked button - apply no styles
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: 2px solid $cobalt-blue-400;
+
+    &::after {
+      outline: none;
+    }
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
+// Require a .button class on all buttons
+.button {
+  background-color: $grey-100;
+  border: none;
+  border-radius: $border-radius;
+  box-shadow: 0 0.125em 0 darken($grey-100, 6%);
+  color: $color-text;
+  display: inline-block;
+  font-size: $font-size-500;
+  font-family: $typeface-header;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: $base-padding/2;
+  margin-right: $base-padding/2;
+  overflow: hidden;
+  padding: $base-padding $base-padding * 1.5;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  transition: all 0.15s ease-out;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    background-color: $grey-200;
+    box-shadow: 0 0.125em 0 darken($grey-200, 6%);
+    color: inherit;
+    text-decoration: none;
+    z-index: 3;
+  }
+
+  &.button-primary {
+    background-color: $ts-green-500;
+    box-shadow: 0 0.125em 0 darken($ts-green-500, 4%);
+
+    &:hover,
+    &:focus {
+      background-color: $ts-green-400;
+    }
+
+    &:active {
+      background-color: $ts-green-600;
+    }
+  }
+
+  &.button-secondary {
+    background-color: $vivid-amber-500;
+    box-shadow: 0 0.125em 0 darken($vivid-amber-500, 4%);
+
+    &:hover,
+    &:focus {
+      background-color: $vivid-amber-400;
+    }
+
+    &:active {
+      background-color: $vivid-amber-600;
+    }
+  }
+
+  &.button-negative {
+    background-color: $brilliant-amaranth-500;
+    box-shadow: 0 0.125em 0 darken($brilliant-amaranth-500, 4%);
+
+    &:hover,
+    &:focus {
+      background-color: $brilliant-amaranth-400;
+    }
+
+    &:active {
+      background-color: $brilliant-amaranth-600;
+    }
+  }
+
+  &.button-primary,
+  &.button-secondary,
+  &.button-negative {
+    color: #fff;
+    fill: #fff;
+  }
+
+  &.button-outlined {
+    background-color: transparent;
+    border: 2px solid $grey-100;
+    box-shadow: none;
+    padding: calc(#{$base-padding} - 1px) $base-padding * 1.5;
+    bottom: -1px;
+
+    &:hover,
+    &:focus {
+      border-color: $grey-300;
+    }
+
+    &:disabled {
+      border-color: $grey-100 !important;
+      color: $grey-400 !important;
+    }
+  }
+
+  &.button-close {
+    border-radius: 50%;
+    box-shadow: none;
+    font-family: $typeface-header;
+    font-size: $font-size-600;
+    height: 1.5rem;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    width: 1.5rem;
+    z-index: 9;
+
+    svg {
+      padding: 0.38rem;
+    }
+  }
+
+  &.button-large {
+    font-size: $font-size-700;
+    padding: $base-padding $base-padding * 2;
+  }
+
+  &.button-small {
+    font-size: $font-size-300;
+    padding: $base-padding/2 $base-padding;
+  }
+
+  &.button-link {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: $color-link;
+    font-weight: normal;
+    font-family: $typeface-base;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $grey-0;
+      text-decoration: underline;
+      transform: none;
+    }
+  }
+
+  &.button-icon {
+    padding-bottom: $base-padding/1.7;
+    padding-top: $base-padding/1.7;
+
+    .icon {
+      height: 1.5rem;
+    }
+  }
+
+  // Used for New Question in Assessment editor
+  &.button-block {
+    background-color: transparent;
+    border: 2px dashed $grey-200;
+    box-shadow: none;
+    font-size: $font-size-600;
+    outline: none;
+    padding: $base-padding * 6 $base-padding * 2;
+    width: 100%;
+
+    .icon {
+      color: inherit;
+      height: $base-padding * 2;
+      margin-bottom: -3px;
+      margin-right: $base-padding/4;
+      transition: transform 0.15s ease-out;
+      width: 1.5rem;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $grey-500;
+
+      .icon {
+        transform: scale(1.1);
+      }
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+
+  &:disabled {
+    background-color: $grey-0 !important;
+    box-shadow: none !important;
+    border-color: $grey-200 !important;
+    color: $grey-600 !important;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  &:active,
+  &.active {
+    transform: translate3d(0, 1px, 0);
+    box-shadow: none;
+  }
+
+  .icon {
+    display: inline-block;
+    margin: 0;
+    bottom: -2px;
+    fill: inherit;
+    height: 1em;
+    margin-top: -2px;
+    pointer-events: none;
+    position: relative;
+    width: 1em;
+  }
+}
+
+// Override link styles
+.button-link {
+  color: $cobalt-blue-500;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
+
+// A basic button for use with icons and tablist-sub
+.button-basic {
+  border-radius: $border-radius;
+  color: $color-text;
+  cursor: pointer;
+  display: inline-block;
+  padding: $base-padding $base-padding * 2;
+  transition: background-color 0.15s ease-out;
+
+  &.button-small {
+    padding: $base-padding/2 $base-padding;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $grey-100;
+    box-shadow: none;
+    color: #000;
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: $grey-200;
+  }
+
+  &.active {
+    background-color: $ts-green-100;
+    color: $ts-green-800;
+  }
+
+  .icon {
+    bottom: -2px;
+    position: relative;
+  }
+}

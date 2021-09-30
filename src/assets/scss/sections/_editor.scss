@@ -1,0 +1,177 @@
+/* Shared editor styles ---------------------- */
+.alpha-list,
+.sort-list {
+  input {
+    border: none;
+    flex: 1 1 auto;
+  }
+
+  li {
+    width: 100%;
+
+    &.focused {
+      input {
+        outline: none;
+      }
+    }
+
+    &.add {
+      list-style: none;
+      margin: $base-padding/2 0 0 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  figure {
+    display: block;
+    flex: 0 0 auto;
+    max-width: 6rem;
+    padding-left: $base-padding/2;
+
+    button {
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+
+  img {
+    max-height: 6rem;
+  }
+}
+
+.alpha-list {
+  li {
+    padding: 0;
+
+    &:before {
+      padding-left: $base-padding;
+      text-align: right;
+      width: auto;
+    }
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &.focused {
+      background-color: #fff;
+      outline: 2px solid $cobalt-blue-400;
+
+      .edit-option {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &.add {
+      margin-left: $base-padding;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        outline: none;
+      }
+    }
+
+    > div {
+      width: auto;
+      margin-left: $base-padding;
+
+      label {
+        margin-left: $base-padding;
+      }
+    }
+
+    .edit-option {
+      margin-left: 0;
+    }
+  }
+}
+
+.sort-list {
+  list-style: none;
+  padding: 0;
+
+  > li {
+    > div {
+      align-items: center;
+      display: flex;
+      font-weight: bold;
+    }
+
+    &:hover {
+      > div {
+        background-color: #fff;
+      }
+    }
+
+    &.focused > div {
+      background-color: #fff;
+      outline: 2px solid $cobalt-blue-400;
+
+      .edit-option {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}
+
+.focused {
+  input {
+    background-color: transparent;
+  }
+}
+
+.edit-option {
+  flex: 0 0 auto;
+  margin-left: auto;
+  opacity: 0.01;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out;
+  white-space: nowrap;
+
+  .button-basic {
+    opacity: 0.6;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+}
+
+.button-basic.button-small {
+  padding: $base-padding/2 $base-padding/1.5;
+}
+
+.button.button-link {
+  color: $cobalt-blue-500;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    color: $cobalt-blue-600;
+  }
+}
+
+/* Close button on question images */
+figure {
+  position: relative;
+
+  .button {
+    position: absolute;
+    right: $base-padding/2;
+    top: $base-padding/2;
+  }
+}

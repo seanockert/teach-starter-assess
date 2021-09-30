@@ -1,0 +1,45 @@
+/* Abstract theme 
+- to target child components, prepend /deep/ to the selector.
+*/
+
+$theme-url: '/images/themes/abstract/';
+$theme-font: 'Chewy';
+$theme-color-red: #f05a28;
+$theme-color-blue: #7fa9cb;
+$theme-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+
+.custom-theme-abstract {
+  background: #fbf8eb url('#{$theme-url}theme-background.png') repeat top center;
+  background-size: 400px 400px;
+
+  .player-header {
+    h2,
+    p {
+      color: $theme-color-blue;
+      font-family: #{$theme-font}, 'museo-sans-rounded', 'museo-sans', sans-serif;
+      letter-spacing: 0.05rem;
+    }
+
+    h2 {
+      background: #fff;
+      border-radius: 25px 20px 28px 15px;
+      box-shadow: $theme-box-shadow;
+      padding: $base-padding $base-padding * 3;
+      transform: rotate(-1deg);
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
+  }
+
+  .player {
+    border-radius: 26px 14px 0 0;
+    box-shadow: $theme-box-shadow;
+  }
+
+  /deep/ .player-question header h4,
+  /deep/ .number-list > li::before {
+    background-color: $theme-color-red;
+  }
+}

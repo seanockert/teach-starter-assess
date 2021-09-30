@@ -1,0 +1,71 @@
+/* Birds theme 
+- to target child components, prepend /deep/ to the selector.
+*/
+
+$theme-url: '/images/themes/birds/';
+$theme-font: 'Boogaloo';
+$theme-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+
+.custom-theme-birds {
+	background: #96d0f1 url('#{$theme-url}theme-background.png') repeat top center;
+	background-size: 400px 400px;
+
+	.player-header {
+		h2,
+		p {
+			font-family: #{$theme-font}, 'museo-sans-rounded', 'museo-sans', sans-serif;
+			z-index: 11;
+		}
+	}
+
+	.player {
+		border-radius: 26px 44px 0 0;
+	}
+}
+
+@media (min-width: 1100px) {
+	.custom-theme-birds {
+		.player-header {
+			position: relative;
+
+			&::after {
+				background: url('#{$theme-url}theme-decoration-3.png') no-repeat;
+				background-size: 70px 70px;
+				bottom: -34px;
+				content: '';
+				height: 100px;
+				left: 30%;
+				position: absolute;
+				pointer-events: none;
+				width: 70px;
+				z-index: 10;
+			}
+		}
+
+		.player {
+			&::before,
+			&::after {
+				background-repeat: no-repeat;
+				content: '';
+				position: absolute;
+				pointer-events: none;
+				background-size: 200px 566px;
+				height: 566px;
+				width: 200px;
+				z-index: 10;
+			}
+
+			&::before {
+				bottom: 0;
+				left: -180px;
+				background-image: url('#{$theme-url}theme-decoration-1.png');
+			}
+
+			&::after {
+				bottom: 0;
+				right: -180px;
+				background-image: url('#{$theme-url}theme-decoration-2.png');
+			}
+		}
+	}
+}

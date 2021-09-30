@@ -1,0 +1,57 @@
+/* Result layout ---------------------- */
+
+// Results listing
+table {
+  .label {
+    margin-top: 4px;
+  }
+
+  .percentage {
+    margin-left: 0;
+    margin-right: $base-padding/2;
+    color: $ts-green-700;
+  }
+
+  td {
+    &.multiple {
+      vertical-align: top;
+      padding-top: $base-padding * 1.5;
+    }
+  }
+}
+
+.actions {
+  a,
+  button {
+    color: $grey-400;
+    display: inline-block;
+    line-height: 1;
+    padding: $base-padding $base-padding/2;
+
+    svg {
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+  }
+
+  .edit {
+    &:hover,
+    &:focus {
+      color: $cobalt-blue-500;
+    }
+  }
+  .delete {
+    &:hover,
+    &:focus {
+      color: $brilliant-amaranth-500;
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .actions {
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,181 @@
+/* Custom theme base styles 
+- to target child components, prepend /deep/ to the selector.
+*/
+
+$theme-url: '/images/themes/abstract/';
+$theme-box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+$theme-max-width: 55rem;
+
+.custom-theme {
+  overflow-x: hidden;
+  padding: 0;
+
+  > section {
+    min-height: 100vh;
+    height: 100vh;
+  }
+
+  .player,
+  /deep/ .player-nav > div {
+    margin: 0 auto;
+    max-width: $theme-max-width;
+  }
+
+  .player-header {
+    align-items: center;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    min-height: 12rem;
+    text-align: center;
+
+    .link-back {
+      margin-bottom: $base-padding;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: normal;
+      line-height: 1.2;
+      margin: 0 auto;
+      max-width: $theme-max-width;
+      padding: 0 $base-padding;
+    }
+
+    p {
+      font-size: $font-size-700;
+      margin-bottom: 0;
+    }
+  }
+
+  .player {
+    align-items: flex-start;
+    background-color: #fff;
+    box-shadow: $theme-box-shadow;
+    padding: $base-padding;
+    position: relative;
+    overflow: visible;
+    min-height: calc(100% - 12rem);
+  }
+
+  .player-nav {
+    border: none;
+  }
+
+  /deep/ .player-question {
+    padding-bottom: $base-padding * 10;
+
+    header {
+      h4 {
+        background-color: #000;
+        border-radius: 50%;
+        color: #fff;
+        top: -1px;
+
+        svg {
+          margin: 2px 0;
+        }
+      }
+    }
+  }
+
+  /deep/ .toggle-font {
+    right: $base-padding;
+  }
+
+  /deep/ .number-list {
+    > li {
+      &::before {
+        background-color: #000;
+        border-radius: 50%;
+        color: #fff;
+        font-weight: normal;
+        line-height: 1;
+        margin-right: $base-padding;
+        padding: 4px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  /*
+  /deep/ .button {
+    border: 2px solid $grey-300;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.1);
+
+    &:active {
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  /deep/ .button-primary {
+    border: 2px solid $ts-green-600;
+  }
+  */
+
+  .player-complete {
+    border: none;
+  }
+
+  &.large-player {
+    .player,
+    /deep/ .player-nav > div {
+      max-width: 60rem;
+    }
+  }
+}
+
+.custom-theme-default {
+  padding: 0;
+
+  .player-header > div {
+    align-items: center;
+    display: flex;
+  }
+
+  > section {
+    margin: $base-padding auto;
+    max-width: 50rem;
+  }
+
+  header,
+  .player {
+    padding-left: $base-padding;
+    padding-right: $base-padding;
+  }
+}
+
+@media (min-width: 640px) {
+  .custom-theme {
+    .player-header {
+      .link-back {
+        position: absolute;
+        left: 0;
+        padding: $base-padding;
+
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    .player {
+      padding: $base-padding * 3;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .custom-theme {
+    .player-header {
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+}

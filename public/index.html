@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta property="og:url" content="<%= BASE_URL %>assess" />
+    <meta property="og:title" content="Teach Starter Assess" />
+    <meta property="og:image" content="<%= BASE_URL %>images/share_image.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image:src" content="<%= BASE_URL %>images/share_image.jpg" />
+    <meta property="fb:app_id" content="152351391599356" />
+    <meta property="og:description" content="​Create interactive classroom activities and assessments to share with your students and monitor their results" />
+    <meta name="description" content="Create interactive classroom activities and assessments to share with your students and monitor their results" />
+    <meta name="theme-color" content="#78bc3a">
+    <meta name="google-site-verification" content="nXdEVmmaGddgbB6wIVBUJ4iFNMmmidYmTdfULb8lFEQ" />
+    <link rel="shortcut icon" href="<%= BASE_URL %>images/teachstarter-favicon.png" />
+    <link rel="apple-touch-icon" href="<%= BASE_URL %>images/assess-icon-192.png" />
+    <link rel="preconnect" href="https://use.typekit.net/">
+    <link rel="preconnect" href="https://cdn.segment.io/">
+    <link rel="stylesheet" href="https://use.typekit.net/hhz8hyf.css" crossorigin>
+
+    <title>Assess | Teach Starter</title>
+    <style>
+      * {box-sizing:border-box}
+      html {box-sizing:border-box;height:100%}
+      body {font-family:sans-serif;height:inherit;margin:0}
+      #assess {height:inherit}
+      .splash {align-items:center;background-color:#fff;color:#78bc3a;display:flex;height:100vh;justify-content:center;text-align:center;width:100vw}
+      .splash i {font-style:normal;animation:1.4s linear blink infinite}
+      .splash i:nth-child(2) {animation-delay:.2s}
+      .splash i:nth-child(3) {animation-delay:.4s}
+      .warning {background-color:#f9b2b7;color:#660908;padding:.75rem;text-align:center;width:100%}
+      .warning a {color:inherit;text-decoration:underline;white-space:nowrap;}
+      .warning a:hover {color:inherit;}
+      @keyframes blink {0%,100%{opacity:.0;}20%{opacity:1}}
+    </style>
+
+    <!-- Segment Analytics -->
+    <% if (process.env.VUE_APP_ENV === 'production') { %><script>!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+      analytics.load('I2SaHq8JU1WZn4kTo1z9V1AdQvBnX3w');
+    }}();</script><% } %>        
+    <% if (process.env.VUE_APP_ENV === 'staging' || process.env.VUE_APP_ENV === 'staging2') { %><script>!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+      analytics.load('36Okcy5i0gPaOUXQpdi8ncwM0bor8iL7');
+    }}();</script><% } %>  
+  </head>
+  <body>
+    <noscript>
+      <div class="warning">To use Assess please enable JavaScript.</div>
+    </noscript>
+    <main id="assess">
+      <div class="splash">
+        <div>
+          <svg role="img" class="logo" height="60" width="60" viewBox="0 0 60 60"><title>Assess</title><defs><linearGradient id="lg1" x1="99.631%" x2="52.659%" y1="49.933%" y2="49.933%"><stop offset="0%" stop-color="rgb(106,164,64)"/><stop offset="70%" stop-color="rgb(120, 188, 58)"/></linearGradient><linearGradient id="lg2" x1=".369%" x2="47.341%" y1="50.201%" y2="50.201%"><stop offset="0%" stop-color="rgb(106,164,64)"/><stop offset="70%" stop-color="rgb(120, 188, 58)"/></linearGradient></defs><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g fill-rule="nonzero" transform="translate(2)"><path fill="rgb(120,188,67)" d="M52.83 60.44H2.37A2.37 2.37 0 010 58.04V7.44a2.37 2.37 0 012.37-2.32h50.46a2.37 2.37 0 012.37 2.32v50.6a2.371 2.371 0 01-2.37 2.4zM7.41 53h40.38V12.53H7.41V53z"/><path fill="rgb(120,188,67)" d="M41.66 12.53V2.37A2.37 2.37 0 0039.29 0H15.91a2.37 2.37 0 00-2.37 2.37v10.16h28.12z"/><path fill="url(#lg1)" d="M0 12.53V7.44a2.37 2.37 0 012.37-2.32h11.17v7.41H0z"/><path fill="url(#lg2)" d="M55.2 12.53V7.44a2.37 2.37 0 00-2.37-2.36H41.66v7.41l13.54.04z"/><path fill="rgb(120,188,67)" id="splash-tick" d="M42.91 22.44L41 20.57a2.38 2.38 0 00-3.35 0L22.1 36.13l-4.57-4.56a2.35 2.35 0 00-3.34 0l-1.9 1.87a2.35 2.35 0 000 3.34l8.14 8.14a2.35 2.35 0 003.34 0l19.14-19.1a2.38 2.38 0 000-3.38z"/></g></g></svg>
+          <p>Loading Assess<i>.</i><i>.</i><i>.</i></p>
+        </div>
+      </div>
+    </main>
+    <script>     
+      document.addEventListener('DOMContentLoaded',function(){if(/Trident\/|MSIE/.test(window.navigator.userAgent)){var n=document.createElement('div');n.className='warning';n.innerHTML='Looks like you\'re using Internet Explorer. Some features of Assess may not work well in this web browser. We recommend <a href="https://browsehappy.com/" target="_blank">upgrading to a modern browser</a>.';document.body.insertBefore(n,document.body.firstChild);}});
+    </script>
+  </body>
+</html>

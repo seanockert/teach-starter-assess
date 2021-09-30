@@ -1,0 +1,45 @@
+/* Modal popup ---------------------- */
+
+.modal {
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  left: 50%;
+  max-width: 38rem;
+  max-height: 85vh;
+  opacity: 0;
+  position: fixed;
+  pointer-events: none;
+  top: 10%;
+  transform: scale(0.5) translate3d(-50%, 0, 0);
+  transform-origin: 0% 50%;
+  transition: all 0.15s $base-transition;
+  width: 100%;
+  z-index: -1;
+
+  &.show {
+    display: block;
+    opacity: 1;
+    overflow: auto;
+    pointer-events: auto;
+    transform: scale(1) translate3d(-50%, 0, 0);
+    z-index: 100;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .inner {
+    padding: $base-padding;
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
+
+@media #{$small-only} {
+  .modal {
+    &.show {
+      transform: scale(0.95) translate3d(-50%, 0, 0);
+    }
+  }
+}

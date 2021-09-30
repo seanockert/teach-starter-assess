@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /report.html
+Disallow: /200.html
+Disallow: /setToken.php
+Disallow: /getToken.php

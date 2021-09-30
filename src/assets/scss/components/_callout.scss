@@ -1,0 +1,37 @@
+/* Callout box */
+.callout {
+  background-color: $vivid-amber-0;
+  border-radius: $border-radius;
+  color: $vivid-amber-900;
+  display: inline-flex;
+  font-family: $typeface-base;
+  font-size: $font-size-400;
+  line-height: 1.5;
+  margin-top: $base-padding * 2;
+  padding: $base-padding;
+
+  p {
+    margin: $base-padding 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  svg {
+    flex: 0 0 auto;
+    height: 1rem;
+    margin-left: -3px;
+    margin-right: $base-padding/3;
+    margin-top: 3px;
+  }
+
+  &.callout-primary {
+    background-color: $ts-green-0;
+    color: $ts-green-900;
+  }
+}

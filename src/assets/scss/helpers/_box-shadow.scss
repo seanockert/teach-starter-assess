@@ -1,0 +1,40 @@
+/*  This box shadow hover is much more performant than animating the box shadow directly - http://tobiasahlin.com/blog/how-to-animate-box-shadow/ */
+
+.shadow {
+  background-color: #fff;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease-out;
+
+  &:after {
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    content: '';
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s ease-out;
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    transform: translate3d(0, -1px, 0);
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: translate3d(0, 0, 0);
+
+    &:after {
+      opacity: 00;
+    }
+  }
+}

@@ -1,0 +1,173 @@
+/* Label ---------------------- */
+
+.label {
+  background-color: $grey-0;
+  border-radius: $border-radius;
+  display: inline-block;
+  color: $color-text;
+  font-size: $font-size-200;
+  font-weight: bold;
+  line-height: 1;
+  margin-right: $base-padding/2;
+  max-width: 12rem;
+  overflow: hidden;
+  padding: $base-padding/4 $base-padding/2;
+  position: relative;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  b {
+    border-radius: 50%;
+    background-color: $grey-500;
+    display: inline-block;
+    height: 9px;
+    margin-right: $base-padding/2;
+    position: relative;
+    width: 9px;
+  }
+
+  &.label-bubble {
+    border-radius: 50%;
+    background-color: $grey-0;
+    color: $color-text-lightest;
+    height: 1.2rem;
+    line-height: 1.25rem;
+    margin: 0 0 -0.25rem 0;
+    padding: 0;
+    display: inline-block;
+    text-align: center;
+    width: 1.2rem;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.label-primary,
+.label-assigned {
+  background-color: $ts-green-100;
+  color: $ts-green-800;
+
+  b {
+    background-color: $ts-green-500;
+  }
+}
+
+.label-secondary {
+  background-color: $vivid-cyan-100;
+  color: $vivid-cyan-900;
+}
+
+.label-warning,
+.label-closed {
+  background-color: $brilliant-amaranth-100;
+  color: $brilliant-amaranth-900;
+
+  b {
+    background-color: $brilliant-amaranth-500;
+  }
+}
+
+.label-notice,
+.label-ended,
+.label-draft,
+.label-free {
+  background-color: $vivid-amber-100;
+  color: $vivid-amber-900;
+
+  b {
+    background-color: $vivid-amber-500;
+  }
+}
+
+// For marking results tick and cross
+.label-correct,
+.label-wrong {
+  color: #fff;
+  font-size: $font-size-600;
+  padding: $base-padding/2;
+  border-radius: 50%;
+  line-height: 0;
+
+  svg {
+    height: 1.125rem;
+    width: auto;
+  }
+}
+
+.label-correct {
+  background-color: $ts-green-0;
+  color: $ts-green-500;
+}
+
+.label-wrong {
+  background-color: #ffeaeb;
+  color: $brilliant-amaranth-500;
+}
+
+.label-grade {
+  font-size: $font-size-500;
+  margin: 0 !important;
+}
+
+.label-premium {
+  background-color: $strong-fuchsia-100;
+  color: $strong-fuchsia-500 !important;
+}
+
+.label-marked {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: $typeface-header;
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-top: -$base-padding * 2;
+  margin-bottom: -$base-padding;
+  padding: $base-padding $base-padding * 2;
+  transform: rotate(-3deg);
+}
+
+.link-list {
+  .label {
+    top: 2px;
+  }
+}
+
+// Little labels used for swatches of color
+.swatch {
+  display: inline-block;
+  border-radius: $border-radius;
+  bottom: -2px;
+  height: 1rem;
+  position: relative;
+  width: 1rem;
+
+  &.swatch-green {
+    background-color: $ts-green-500;
+  }
+
+  &.swatch-red {
+    background-color: $brilliant-amaranth-500;
+  }
+
+  &.swatch-blue {
+    background-color: $cobalt-blue-500;
+  }
+
+  &.swatch-yellow {
+    background-color: yellow;
+  }
+}
+
+// Sticky note label
+.sticky-note {
+  background: linear-gradient(45deg, #f9efaf, #f7e98d);
+  border-radius: $border-radius;
+  display: inline-block;
+  max-width: 20rem;
+  min-width: 10rem;
+  padding: $base-padding;
+  position: relative;
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+/* Drag and drop */
+.gu-mirror {
+	margin: 0 !important;
+	opacity: 1;
+	position: fixed !important;
+	transform: rotate(3deg);
+	z-index: 9999 !important;
+}
+
+.gu-hide {
+	display: none !important;
+}
+
+.gu-unselectable {
+	user-select: none !important;
+}
+
+.gu-transit {
+	opacity: 0.4;
+}

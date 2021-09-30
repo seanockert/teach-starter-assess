@@ -1,0 +1,28 @@
+{
+  "short_name": "Assess",
+  "name": "Teach Starter Assess tool",
+  "description": "Create interactive classroom activities and assessments to share with your students and monitor their results",
+  "icons": [
+    {
+      "src": "/images/assess-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/assess-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/images/assess-icon-192-maskable.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/assess/?source=pwa",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#78bc3a",
+}

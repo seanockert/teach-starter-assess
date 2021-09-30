@@ -1,0 +1,146 @@
+/* Table styles  ---------------------- */
+.table {
+  margin-bottom: $base-padding;
+  width: 100%;
+
+  td,
+  th {
+    border-bottom: 1px solid $grey-100;
+    line-height: 1.3;
+    padding: $base-padding;
+  }
+
+  th {
+    border: none;
+    color: $color-text-lightest;
+    font-size: $font-size-200;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    padding-bottom: $base-padding/2;
+    text-transform: uppercase;
+  }
+
+  td {
+    &.actions {
+      padding: 0;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    &.select-row {
+      padding: 0;
+
+      .form-choice {
+        bottom: -2px;
+      }
+
+      label {
+        margin: 0;
+        padding: $base-padding $base-padding $base-padding/2 $base-padding * 1.5;
+      }
+    }
+
+    input {
+      min-width: 4.5rem;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    &:nth-child(odd) {
+      background-color: $grey-0;
+    }
+
+    :last-child td,
+    td[rowspan] {
+      border: none;
+    }
+  }
+
+  tfoot {
+    td {
+      border: none;
+    }
+
+    .button-negative {
+      margin: 0 0 $base-padding * 4 0;
+    }
+  }
+}
+
+tr.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.15s ease-out;
+
+  &:hover {
+    background-color: $grey-100;
+  }
+
+  div {
+    display: inline-block;
+  }
+}
+
+@media #{$small-only} {
+  /* Force table to not be a table anymore */
+  .table:not(.table-curriculum) {
+    display: block;
+
+    thead,
+    tbody,
+    tfoot,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+
+    /* Hide table headers (but not with display: none, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: $grey-0;
+        }
+      }
+
+      td {
+        align-items: center;
+        border: none;
+        display: flex;
+        padding-left: 40% !important;
+        position: relative;
+
+        &.actions,
+        &.select-row {
+          display: inline-block;
+
+          margin-bottom: $base-padding;
+        }
+
+        &.select-row {
+          padding-left: $base-padding/2 !important;
+        }
+      }
+    }
+
+    td::before {
+      color: $color-text-lightest;
+      content: attr(data-title);
+      font-size: $font-size-300;
+      left: $base-padding;
+      padding-right: $base-padding;
+      position: absolute;
+      width: 40%;
+      white-space: nowrap;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+/* Mini Beasts theme 
+- to target child components, prepend /deep/ to the selector.
+*/
+
+$theme-url: '/images/themes/mini-beasts/';
+$theme-color-red: #f05a28;
+
+.custom-theme-mini-beasts {
+  background: #8b5d3d url('#{$theme-url}theme-background.png') repeat top center;
+  background-size: 512px 512px;
+  padding: 0;
+
+  > section {
+    background: url('#{$theme-url}theme-header.png') no-repeat top center;
+    background-size: 700px auto;
+  }
+
+  .player-header {
+    .link-back {
+      color: #fff;
+    }
+
+    h2,
+    p {
+      color: $theme-color-red;
+      font-family: 'Titan One', 'museo-sans-rounded', 'museo-sans', sans-serif;
+    }
+
+    h2 {
+      text-shadow: -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 3px 3px 0 #fff;
+    }
+
+    p {
+      text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+    }
+  }
+
+  .player {
+    border-radius: 6px 6px 0 0;
+  }
+
+  /deep/ .player-question header h4,
+  /deep/ .number-list > li::before {
+    background-color: $theme-color-red;
+  }
+}
+
+@media (min-width: 1000px) {
+  .custom-theme-mini-beasts {
+    /*&::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      background: url('#{$theme-url}theme-leaves.png') no-repeat bottom center;
+      background-size: 1500px auto;
+      height: 300px;
+      pointer-events: none;
+      width: 100%;
+      z-index: 10;
+    }*/
+
+    > section {
+      background-size: 80rem auto;
+    }
+
+    .player {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        background-size: 96px 96px;
+        height: 96px;
+        width: 96px;
+      }
+
+      &::before {
+        left: -55px;
+        top: 10%;
+        background-image: url('#{$theme-url}theme-decoration-1.png');
+      }
+
+      &::after {
+        right: -40px;
+        top: 50%;
+        background-image: url('#{$theme-url}theme-decoration-2.png');
+      }
+    }
+  }
+}
+
+/*@media (min-width: 1200px) {
+  .custom-theme-mini-beasts {
+    &::after {
+      background-size: 1680px auto;
+    }
+  }
+}
+
+@media (min-width: 1680px) {
+  .custom-theme-mini-beasts {
+    &::after {
+      background-size: 100% auto;
+    }
+  }
+}*/

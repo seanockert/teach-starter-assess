@@ -1,0 +1,121 @@
+[
+	{
+		"target": "[data-v-step=\"0\"]",
+		"content": "Start your first activity. Click to add one.",
+		"params": {
+			"placement": "bottom"
+		}
+	},
+	{
+		"target": "[data-v-step=\"1\"]",
+		"content": "This is the activity editor, where you add and edit your questions. Give your activity a title, then click Next.",
+		"params": {
+			"placement": "bottom"
+		}
+	},
+	{
+		"target": "[data-v-step=\"2\"]",
+		"content": "In the settings menu, you can set an outcome type, a theme, and attach curriculum codes.",
+		"params": {
+			"placement": "right"
+		}
+	},
+	{
+		"target": "[data-v-step=\"3\"]",
+		"content": "Clicking this button opens the New Question menu. Choose Fill the Blanks to continue.",
+		"params": {
+			"placement": "top"
+		}
+	},
+	{
+		"target": "[data-v-step=\"4\"]",
+		"content": "You can add a title, description, and image for this question. <br><br>Each type of question includes different fields for you to edit.",
+		"params": {
+			"placement": "bottom"
+		}
+	},
+	{
+		"target": "[data-v-step=\"5\"]",
+		"content": "Questions have settings. Change question point values, attach curriculum codes, and more in here.",
+		"params": {
+			"placement": "bottom"
+		}
+	},
+	{
+		"target": "[data-v-step=\"6\"]",
+		"content": "Question previews appear on this side.",
+		"params": {
+			"placement": "left"
+		}
+	},
+	{
+		"target": "[data-v-step=\"7\"]",
+		"content": "Preview the whole activity before assigning it to your class.",
+		"params": {
+			"placement": "bottom"
+		}
+	},
+	{
+		"target": "[data-v-step=\"8\"]",
+		"content": "Assign the activity to your class. But first, let's go add a student.",
+		"params": {
+			"placement": "left"
+		}
+	},
+	{
+		"target": "[data-v-step=\"9\"]",
+		"content": "Click to add a new class.",
+		"params": {
+			"placement": "top"
+		}
+	},
+	{
+		"target": "[data-v-step=\"10\"]",
+		"content": "Add a student by giving them a display name and a password. Students get a unique Username which they can use to login.",
+		"params": {
+			"placement": "bottom"
+		}
+	},
+	{
+		"target": "[data-v-step=\"11\"]",
+		"content": "Manage your Class & Students later from this menu. Now, let’s return to assigning your activity.",
+		"params": {
+			"placement": "bottom"
+		}
+	},
+	{
+		"target": "[data-v-step=\"12\"]",
+		"content": "To assign: choose your students, select a start date (plus an optional end date), then confirm.",
+		"params": {
+			"placement": "bottom"
+		}
+	},
+	{
+		"target": "[data-v-step=\"13\"]",
+		"content": "Also share your activity on Google Classroom after assigning.",
+		"params": {
+			"placement": "bottom"
+		}
+	},
+	{
+		"target": "[data-v-step=\"14\"]",
+		"content": "Results will show up here as soon as a students completes the activity. Almost done, one last thing...",
+		"params": {
+			"placement": "top"
+		}
+	},
+	{
+		"target": "[data-v-step=\"15\"]",
+		"content": "Under Templates, you'll find quality, pre-written activities for you to use. Just copy them, edit, then assign!",
+		"params": {
+			"placement": "top"
+		}
+	},
+	{
+		"target": "[data-v-step=\"16\"]",
+		"content": "Now it’s over to you! Thanks for your time. Be sure to check out our help articles for more tips for using Assess.",
+		"params": {
+			"placement": "right"
+		}
+	}
+]

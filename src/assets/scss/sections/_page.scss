@@ -1,0 +1,31 @@
+/* General page layout */
+.wrapper {
+  height: 100%;
+}
+
+main {
+  background-color: $grey-0;
+  min-height: 100%;
+}
+
+.content {
+  min-height: 5rem;
+  padding: $base-padding;
+  position: relative;
+
+  header {
+    a {
+      display: block;
+    }
+
+    a:not(.button) {
+      padding-bottom: $base-padding/2;
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .content {
+    padding: $base-padding $base-padding * 2 0 $base-padding * 2;
+  }
+}

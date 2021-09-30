@@ -1,0 +1,183 @@
+﻿/* Load custom fonts ---------------------- */
+
+//@import url('https://use.typekit.net/hhz8hyf.css');
+
+html {
+  font-family: $typeface-base;
+  font-size: 1em;
+  font-weight: 500;
+  text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $typeface-header;
+}
+
+h1,
+h2,
+h3 {
+  > input {
+    font-family: $typeface-header;
+  }
+}
+
+/* Typography  ---------------------- */
+
+p,
+li {
+  font-family: $typeface-base;
+  line-height: 1.5;
+}
+
+p {
+  margin: 1rem 0;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+li {
+  padding-bottom: $base-padding;
+}
+
+/* Headers  ---------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  margin-top: $base-padding * 2;
+  margin-bottom: $base-padding;
+
+  &:before {
+    display: block;
+    width: 100%;
+    content: '';
+    clear: both;
+  }
+}
+
+h1 {
+  font-size: $font-size-900;
+  line-height: 1.15;
+  margin-top: $base-padding * 3;
+}
+
+h2 {
+  font-size: $font-size-700;
+  line-height: 1.3;
+  margin-top: $base-padding;
+}
+
+h3 {
+  font-size: $font-size-600;
+  line-height: 1.4;
+}
+
+/* Links  ---------------------- */
+
+a {
+  color: $color-link;
+  text-decoration: none;
+
+  &:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid $cobalt-blue-400;
+  }
+
+  &:active {
+    outline: none;
+  }
+}
+
+/* Lists  ---------------------- */
+
+menu,
+ol,
+ul {
+  padding: 0 0 0 1.5em;
+}
+
+/* Text styles  ---------------------- */
+
+.text-center {
+  display: block;
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// Example: <span class="highlight">this text is highlighted</span>
+.text-highlight {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    #ff0 30%,
+    #ff0 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  margin: 0 -$base-padding;
+  padding: 0 $base-padding;
+}
+
+.text-mute {
+  color: $color-text-lightest;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: $color-link;
+    }
+  }
+}
+
+// Adds a green underline
+.text-underline {
+  background: linear-gradient(#e4f2d8, #e4f2d8) 0 0.9em repeat-x;
+  background-size: 8px 6px;
+  padding: 0 3px;
+  margin-left: -3px;
+  white-space: pre-wrap;
+}
+
+.handwritten-label {
+  height: 38px;
+  margin-bottom: -4px;
+  padding-left: $base-padding;
+  width: auto;
+}
+
+// Set max width of paragraphs for readability - remove this if it causese issue
+.columns {
+  p,
+  blockquote {
+    max-width: 40rem;
+  }
+}
+
+@media #{$medium-up} {
+  h1 {
+    font-size: $font-size-1000;
+  }
+}

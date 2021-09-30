@@ -1,0 +1,26 @@
+/* Pineapple theme 
+- to target child components, prepend /deep/ to the selector.
+*/
+
+$theme-url: '/images/themes/pineapple/';
+$theme-font: 'Londrina Solid';
+$theme-box-shadow: -5px 3px 0 rgba(0, 0, 0, 0.2), 5px 3px 0 rgba(0, 0, 0, 0.2);
+
+.custom-theme-pineapple {
+	background: #fff url('#{$theme-url}theme-background.png') repeat top left;
+	background-size: 400px 400px;
+
+	.player-header {
+		h2,
+		p {
+			color: $color-text;
+			font-family: #{$theme-font}, 'museo-sans-rounded', 'museo-sans', sans-serif;
+			text-shadow: -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 3px 3px 0 #fff;
+		}
+	}
+
+	.player {
+		border-top: 5px solid #fae74d;
+		box-shadow: $theme-box-shadow;
+	}
+}

@@ -1,0 +1,191 @@
+/* Algolia search ---------------------- */
+
+.search-container {
+  border-radius: $border-radius;
+  flex: 1 1 auto;
+  margin: 0 $base-padding;
+  max-width: 40rem;
+  position: relative;
+  z-index: 10;
+}
+
+#query {
+  background-color: $grey-0;
+  border: none;
+  border-radius: $border-radius;
+  margin: 0;
+  padding-left: 2.25em;
+
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  &::placeholder {
+    line-height: 1.2;
+  }
+
+  &:hover {
+    background-color: $grey-100;
+  }
+
+  &:focus {
+    background-color: #fff;
+  }
+}
+
+.main-nav-search-button {
+  background: none;
+  border: none;
+  left: 0;
+  padding: $base-padding;
+  position: absolute;
+  top: 0;
+  -webkit-appearance: none;
+
+  svg {
+    color: $grey-500;
+    bottom: -2px;
+    position: relative;
+  }
+}
+
+.autocomplete {
+  background-color: #fff;
+  border-top: 1px solid $grey-100;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -2px 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: $typeface-base;
+  margin-top: -1px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+
+  li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+  }
+
+  a {
+    align-items: center;
+    color: $color-text-lightest;
+    display: flex;
+    line-height: 1.5;
+    padding: $base-padding/1.5;
+    text-decoration: none;
+
+    > * {
+      margin: 0 $base-padding/3;
+
+      > div {
+        color: $grey-500;
+        font-family: $typeface-header;
+        font-size: $font-size-200;
+        text-transform: uppercase;
+      }
+    }
+
+    span {
+      flex: 1;
+    }
+
+    figure {
+      background-color: $grey-0;
+      flex: 0 0 auto;
+      margin-left: 0;
+      max-height: 38px;
+      text-align: center;
+      width: 4.5em;
+    }
+
+    [class*='text'] {
+      color: $ts-green-500;
+    }
+
+    .text-teaching-resource {
+      color: $sea-green-500;
+    }
+
+    .text-unit-plan,
+    .text-lesson-plan {
+      color: $strong-fuchsia-500;
+    }
+
+    .text-blog {
+      color: $moderate-purple-500;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $grey-0;
+    }
+
+    &:active {
+      background-color: $grey-100;
+    }
+  }
+
+  > span > div {
+    font-size: $font-size-200;
+    font-weight: 700;
+    margin-bottom: -3px;
+    text-transform: uppercase;
+  }
+
+  svg {
+    color: $grey-400;
+  }
+
+  .label {
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+}
+
+mark {
+  background-color: transparent;
+  color: $color-text;
+  font-weight: 700;
+  padding: 0;
+}
+
+img {
+  height: auto;
+  border-radius: $border-radius;
+  width: inherit;
+}
+
+strong {
+  color: $color-text;
+  font-weight: normal;
+}
+
+#autocomplete-topics {
+  strong {
+    max-width: 20rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.skeleton {
+  align-items: center;
+  display: flex;
+
+  > * {
+    flex: 1 1 auto;
+    height: 1.5rem;
+    margin: $base-padding/1.5;
+  }
+
+  :first-child {
+    border-radius: $border-radius;
+    flex: 0 0 auto;
+    height: 2.3rem;
+    margin-right: 0;
+    width: 4.5rem;
+  }
+}
+
+@media #{$small-only} {
+  //
+}

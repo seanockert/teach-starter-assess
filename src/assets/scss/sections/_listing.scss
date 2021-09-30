@@ -1,0 +1,119 @@
+/* Assessment listing main view ---------------------- */
+
+.listing-description {
+  margin-bottom: $base-padding;
+
+  .pull-right {
+    margin-left: 0;
+    margin-top: $base-padding;
+    width: 100%;
+  }
+}
+
+.listing-search {
+  input,
+  select {
+    border: 1px solid $grey-200;
+    padding-left: $base-padding * 3;
+
+    &:hover {
+      background-color: $grey-0;
+    }
+
+    &:focus {
+      background-color: #fff;
+    }
+  }
+
+  select {
+    margin-left: $base-padding/4;
+    min-width: 7rem;
+    padding: $base-padding;
+  }
+}
+
+.listing-search-input {
+  flex: 0 0 auto;
+  margin-left: $base-padding;
+  position: relative;
+
+  button {
+    color: $grey-400;
+    position: absolute;
+    left: $base-padding;
+    top: 0.85rem;
+  }
+}
+
+.listing-cards > li {
+  padding-bottom: $base-padding * 2;
+}
+
+// For pagination
+.button-more {
+  color: $color-link;
+  display: block;
+  padding: $base-padding * 2 $base-padding;
+  text-align: center;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    background-color: $grey-100;
+    border-radius: 0 0 $border-radius $border-radius;
+    color: $color-link-hover;
+  }
+}
+
+// For assessment cards and questions
+li,
+.editor-title {
+  footer {
+    .button {
+      margin: 0 $base-padding/2 0 0;
+      padding: $base-padding/3 $base-padding/1.5;
+    }
+  }
+}
+
+// Sortable table columns
+.button-sort {
+  color: inherit;
+  letter-spacing: inherit;
+  margin: -$base-padding/2;
+  padding: $base-padding/2;
+  text-transform: inherit;
+
+  &:hover,
+  &:focus {
+    &::after {
+      content: '\2191';
+      margin-left: $base-padding/4;
+      opacity: 0.6;
+    }
+  }
+
+  // Change direction of sort arrow
+  &.button-sort-ASC {
+    &:hover,
+    &:focus {
+      &::after {
+        content: '\2193';
+      }
+    }
+  }
+}
+
+.listing-container {
+  padding-bottom: $base-padding * 14;
+}
+
+@media #{$medium-up} {
+  .listing-description {
+    .pull-right {
+      margin-left: auto;
+      margin-top: 0;
+      width: auto;
+    }
+  }
+}

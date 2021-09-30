@@ -1,0 +1,71 @@
+/* Retro theme 
+- to target child components, prepend /deep/ to the selector.
+*/
+
+$theme-url: '/images/themes/retro/';
+$theme-font: 'Righteous';
+$theme-box-shadow: -5px 3px 0 #000;
+
+.custom-theme-retro {
+	background: #fff url('#{$theme-url}theme-background.png') repeat top left;
+	background-size: 400px 400px;
+
+	.player-header h2,
+	.player {
+		// Skewed top border
+		&::before {
+			background-color: #fff;
+			border: 3px solid #000;
+			border-bottom: none;
+			content: '';
+			left: -3px;
+			position: absolute;
+			transform: skewY(-2deg);
+			width: calc(100% + 6px);
+		}
+	}
+
+	.player-header {
+		h2 {
+			background-color: #fff;
+			border: 3px solid #000;
+			border-top: none;
+			box-shadow: $theme-box-shadow;
+			font-family: #{$theme-font}, 'museo-sans-rounded', 'museo-sans', sans-serif;
+			margin: $base-padding 0 $base-padding * 2 0;
+			padding: $base-padding;
+			position: relative;
+			transform: rotate(-1deg);
+
+			// Skewed top border
+			&::before {
+				height: 20px;
+				top: -10px;
+				transform: skewY(-1deg);
+			}
+		}
+
+		p {
+			margin-bottom: $base-padding * 2;
+			margin-top: -$base-padding;
+			text-shadow: -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 3px 3px 0 #fff;
+		}
+	}
+
+	.player {
+		border-left: 3px solid #000;
+		border-right: 3px solid #000;
+		box-shadow: $theme-box-shadow;
+
+		// Skewed top border
+		&::before {
+			height: 38px;
+			top: -20px;
+		}
+	}
+
+	.player-nav {
+		background: none;
+		backdrop-filter: none;
+	}
+}

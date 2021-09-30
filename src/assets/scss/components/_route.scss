@@ -1,0 +1,66 @@
+/* For router animations */
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-settings-enter-active,
+.slide-settings-leave-active,
+.list-enter-active,
+.list-leave-active,
+.list-move {
+	transition-duration: 0.2s;
+	transition-property: opacity, transform;
+	overflow: hidden;
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+	transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+	opacity: 0;
+	transform: translate3d(2em, 0, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+	opacity: 0;
+}
+
+.slide-left-leave-active,
+.slide-right-enter,
+.slide-right-leave-to {
+	transform: translate3d(-2em, 0, 0);
+}
+
+/* For editor settings menu - slide in/out */
+.slide-settings-enter-active,
+.slide-settings-leave-active {
+	transition-timing-function: $base-transition;
+}
+
+.slide-settings-enter,
+.slide-settings-leave-active {
+	opacity: 0;
+	transform: translate3d(2em, 0, 0);
+}
+
+/* For assessmnet list */
+.list-enter {
+	opacity: 0;
+	transform: translate3d(-2em, 0, 0);
+}
+
+.list-enter-to {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+}
+
+.list-leave-to {
+	opacity: 0;
+	transform: translate3d(0, 4rem, 0) rotate(5deg);
+}

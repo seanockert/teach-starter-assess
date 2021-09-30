@@ -1,0 +1,55 @@
+/* Blocks theme 
+- to target child components, prepend /deep/ to the selector.
+*/
+
+$theme-url: '/images/themes/blocks/';
+$theme-font: 'Alfa Slab One';
+$theme-color-red: #f05a28;
+$theme-box-shadow: -5px 0 0 rgba(0, 0, 0, 0.2), 5px 0 0 rgba(0, 0, 0, 0.2);
+
+.custom-theme-blocks {
+	background: #fff url('#{$theme-url}theme-background.png') repeat top left;
+	background-size: 400px 400px;
+
+	> section {
+		padding-top: $base-padding * 3;
+	}
+
+	.player-header {
+		min-height: auto;
+		padding: 0;
+
+		> div {
+			background-color: #fff;
+			box-shadow: $theme-box-shadow;
+			color: $theme-color-red;
+			font-family: #{$theme-font}, 'museo-sans-rounded', 'museo-sans', sans-serif;
+			letter-spacing: 0.05rem;
+			padding: $base-padding * 2;
+			max-width: 55rem;
+			width: 100%;
+		}
+
+		.link-back {
+			color: $theme-color-red;
+		}
+	}
+
+	.player {
+		box-shadow: $theme-box-shadow;
+		padding-top: $base-padding;
+	}
+
+	/deep/ .player-question header h4,
+	/deep/ .number-list > li::before {
+		background-color: $theme-color-red;
+	}
+}
+
+@media (min-width: 640px) {
+	.custom-theme-blocks {
+		> section {
+			padding-top: 0;
+		}
+	}
+}

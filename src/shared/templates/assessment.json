@@ -1,0 +1,50 @@
+{
+	"id": null,
+	"slug": "",
+	"title": "",
+	"description": "",
+	"meta_title": "",
+	"meta_description": "",
+	"state": "draft",
+	"theme": "default",
+	"is_assigned": 0,
+	"template": "none",
+	"scoring": "points",
+	"grades": [
+		{
+			"grade": "a",
+			"color": "#73edf1",
+			"label": "Very High",
+			"scale": 100
+		},
+		{
+			"grade": "b",
+			"color": "#6ad348",
+			"label": "High",
+			"scale": 84
+		},
+		{
+			"grade": "c",
+			"color": "#fbeb79",
+			"label": "Sound",
+			"scale": 64
+		},
+		{
+			"grade": "d",
+			"color": "#ffd97c",
+			"label": "Developing",
+			"scale": 48
+		},
+		{
+			"grade": "e",
+			"color": "#ffbebf",
+			"label": "Emerging",
+			"scale": 24
+		}
+	],
+	"questions": [],
+	"created": null,
+	"modified": null,
+	"assigned": null,
+	"expires": null
+}

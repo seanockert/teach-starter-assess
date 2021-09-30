@@ -1,0 +1,187 @@
+body.v-tour--active {
+	main,
+	section {
+		pointer-events: none;
+	}
+
+	.question footer {
+		opacity: 1 !important;
+	}
+
+	.modal section {
+		pointer-events: all;
+	}
+}
+
+.v-tour {
+	pointer-events: auto;
+}
+
+.v-tour__target--highlighted {
+	box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.4);
+	border-radius: $border-radius;
+	padding: $base-padding;
+	pointer-events: auto;
+	z-index: 9999;
+}
+
+// Assessments page
+.block-grid li.v-tour__target--highlighted {
+	padding: $base-padding !important;
+}
+
+// Students page
+.table.v-tour__target--highlighted {
+	tfoot {
+		td {
+			padding-bottom: $base-padding;
+		}
+	}
+}
+
+.dropdown.v-tour__target--highlighted,
+.tablist.v-tour__target--highlighted {
+	cursor: not-allowed;
+	padding: 0;
+	pointer-events: none;
+}
+
+// Main nav, assign and editor page
+nav > ul > li.v-tour__target--highlighted,
+.assign.v-tour__target--highlighted,
+.questions.v-tour__target--highlighted .question footer button {
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.v-tour__target--relative {
+	position: relative;
+}
+
+.v-step {
+	background: $grey-900;
+	color: #fff;
+	max-width: 320px;
+	border-radius: $border-radius;
+	-webkit-filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+	filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+	padding: 1rem;
+	z-index: 10000;
+}
+
+.v-step .v-step__arrow {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	position: absolute;
+	margin: 0.5rem;
+	border-color: $grey-900;
+}
+
+.v-step .v-step__arrow--dark {
+	border-color: #454d5d;
+}
+
+.v-step[x-placement^='top'] {
+	margin-bottom: 0.5rem;
+}
+
+.v-step[x-placement^='top'] .v-step__arrow {
+	border-width: 0.5rem 0.5rem 0 0.5rem;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	bottom: -0.5rem;
+	left: calc(50% - 1rem);
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.v-step[x-placement^='bottom'] {
+	margin-top: 0.5rem;
+}
+
+.v-step[x-placement^='bottom'] .v-step__arrow {
+	border-width: 0 0.5rem 0.5rem 0.5rem;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-top-color: transparent;
+	top: -0.5rem;
+	left: calc(50% - 1rem);
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.v-step[x-placement^='right'] {
+	margin-left: 0.5rem;
+}
+
+.v-step[x-placement^='right'] .v-step__arrow {
+	border-width: 0.5rem 0.5rem 0.5rem 0;
+	border-left-color: transparent;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	left: -0.5rem;
+	top: calc(50% - 1rem);
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.v-step[x-placement^='left'] {
+	margin-right: 0.5rem;
+}
+
+.v-step[x-placement^='left'] .v-step__arrow {
+	border-width: 0.5rem 0 0.5rem 0.5rem;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	right: -0.5rem;
+	top: calc(50% - 1rem);
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.v-step__content {
+	line-height: 1.45;
+	margin: 0 0 1rem 0;
+}
+
+.v-step__buttons {
+	text-align: right;
+
+	> button:first-child {
+		float: left;
+		opacity: 0.8;
+	}
+
+	button {
+		background: transparent;
+		border-radius: $border-radius;
+		color: $cobalt-blue-100;
+		cursor: pointer;
+		display: inline-block;
+		font-size: $font-size-300;
+		line-height: 1;
+		margin-top: 0.5rem;
+		outline: none;
+		padding: $base-padding/2;
+		text-align: center;
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+		white-space: nowrap;
+
+		&.button-primary {
+			box-shadow: none;
+			font-size: $font-size-500;
+			margin: 0;
+			padding: $base-padding;
+		}
+
+		&:hover {
+			background-color: $grey-800;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}
