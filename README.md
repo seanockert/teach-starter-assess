@@ -1,5 +1,11 @@
 # Teach Starter Assess
 
+---
+
+*Project deprecated. Production domains and API have been taken down. Keeping a copy of the code for personal use only.*
+
+---
+
 A web app for creating and taking Activities. Built with Vue.js using the Teach Starter API.
 
 Consists of 2 parts:
@@ -45,15 +51,6 @@ From a user perspective, all UI elements have be renamed activity/activities. Th
   - `variables.js` set the API endpoint and local storage keys
 - `dist` base directory for serving the app. The app is compiled into this directory as distributable files via Webpack
 - `vue.config.js` project is built with Vue-CLI. Loads \_variables.scss in every component so we can use variables in component styles
-
-## Link
-
-- **[Staging](https://staging-my.teachstarter.com/)**
-- **[Production](https://my.teachstarter.com/)**
-
-**Production login:**
-
-Username: teachstarter Password: ts2020
 
 ## Sitemap
 
@@ -104,7 +101,7 @@ An activity is considered **Submitted** when it is assigned a 'finished' date. O
 
 The result records now includes the answers. However, we don't want to show any answers to the student until the Result has been **Marked** by the teacher (ie. assigned a 'marked' date). An additional Marked field is added to hold the score and comment for each question.
 
-## API
+## API (deprecated)
 
 Set the API endpoint URL in `/src/variables.js`.
 
